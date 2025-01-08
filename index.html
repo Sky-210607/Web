@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
   <style>
     /* The existing CSS code remains the same as provided earlier */
@@ -163,11 +165,16 @@
 
   <script>
     function validateLogin() {
-      const name = document.getElementById('name').value;
-      const nickname = document.getElementById('nickname').value;
-      const password = document.getElementById('password').value;
+      const name = document.getElementById('name').value.trim();
+      const nickname = document.getElementById('nickname').value.trim();
+      const password = document.getElementById('password').value.trim();
+      console.log("Name: " + name);
+      console.log("Nickname: " + nickname);
+      console.log("Password: " + password);
 
-      if (name === "Pracheta Bhattacharjee" && nickname === "Moon" && password === "MoonSky@2107") {
+      if (name.toLowerCase() === "pracheta bhattacharjee" &&
+          nickname.toLowerCase() === "moon" &&
+          password === "MoonSky@2107") {
         alert("Login successful!");
         window.location.href = "homepagefeb.html";
       } else {
